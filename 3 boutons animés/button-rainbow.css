@@ -1,0 +1,44 @@
+/* FILE BUTTON RAINBOW EFFECT */
+:root {
+  --rouge: #f53d3d;
+  --orange: #e8b71d;
+  --jaune: #eff237;
+  --vert: #49f065;
+  --bleu: #6bdbe1;
+  --indigo: #4b0082;
+  --violet: #e17ce1;
+}
+
+.button-rainbow {
+  border: 0;
+  background: transparent;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 80px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 3em;
+}
+
+.button-rainbow::after {
+  content: "";
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(
+    225deg,
+    var(--jaune) 0%,
+    var(--bleu) 30%,
+    var(--rouge) 100%
+  );
+  position: absolute;
+  top: -80px;
+  left: -60px;
+  /* transform: translateX(-50%) translateY(-50%); */
+  z-index: -1;
+  transition: all 0.8s;
+}
+
+.button-rainbow:hover::after {
+  rotate: 150deg;
+}
